@@ -1,0 +1,33 @@
+@use '../../styles' as variables;
+
+.showcase {
+    display: flex;
+    flex-direction: column;
+
+    & + & {
+        margin-block-start: #{variables.$g-spacing-9};
+    }
+
+    &__title {
+        font-size: #{variables.$g-text-display-2-font-size};
+        line-height: #{variables.$g-text-display-2-line-height};
+        font-weight: #{variables.$g-text-display-font-weight};
+    }
+
+    &__description {
+        font-size: #{variables.$g-text-body-2-font-size};
+        line-height: #{variables.$g-text-body-2-line-height};
+        font-weight: #{variables.$g-text-body-font-weight};
+    }
+
+    &__content {
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: #{variables.$g-spacing-6};
+
+        &:not(:only-child) {
+            margin-block-start: #{variables.$g-spacing-5};
+        }
+    }
+}
