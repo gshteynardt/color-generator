@@ -1,13 +1,7 @@
 export const getAvatarDisplayText = (text: string) => {
-    const letters = text.split(' ');
-
-    let result = '';
-
-    for (let i = 0; result.length < 2 && i < letters.length; i++) {
-        if (letters[i]) {
-            result += letters[i];
-        }
-    }
+    const cleanedText = text.replace(/\s+/g, ' ').trim();
+    const words = cleanedText.split(' ');
+    const result = words.length > 1 ? [words[0][0], words[1][0]].join('') : text.slice(0, 2);
 
     return result.toUpperCase();
 };

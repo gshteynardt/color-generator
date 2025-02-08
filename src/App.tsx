@@ -2,6 +2,7 @@ import { useThemeStore } from '~/model/themeSlice/themeSlice';
 import { useToggleThemeBackground } from '~/hooks/useToggleThemeBackground';
 
 import { Header } from './components/Header/Header';
+import { GeneratedColorsPage } from './pages/GeneratedColorsPage/GeneratedColorsPage';
 
 import './App.scss';
 
@@ -10,9 +11,10 @@ function App() {
     useToggleThemeBackground();
 
     return (
-        <div className="g-root">
+        <main className="main">
             <Header theme={theme} onToggleTheme={toggleTheme} />
-        </div>
+            <GeneratedColorsPage />
+        </main>
     );
 }
 
