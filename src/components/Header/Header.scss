@@ -1,0 +1,10 @@
+@use "../../styles" as variables;
+
+.header {
+    display: flex;
+    justify-content: end;
+    font-weight: #{variables.$g-text-header-font-weight};
+    font-size: #{variables.$g-text-body-3-font-size};
+    line-height: #{variables.$g-text-body-3-line-height};
+    padding: variables.$g-spacing-6;
+}
