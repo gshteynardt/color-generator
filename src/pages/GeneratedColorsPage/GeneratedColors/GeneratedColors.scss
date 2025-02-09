@@ -1,4 +1,16 @@
-.generated-colors-page {
+@use '../../../styles' as variables;
+
+.generated-colors {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    color: #{variables.$g-gray-700};
+
+    &_theme_dark {
+        color: #{variables.$g-gray-100};
+    }
+
     &__color-items {
         display: flex;
         flex-wrap: wrap;

@@ -10,11 +10,18 @@ export type Props = {
     children: ReactNode;
 };
 
-export const Showcase = ({title, description, className, children}: Props) => {
+export const Showcase = ({
+    title,
+    description,
+    className,
+    children,
+}: Props) => {
     return (
         <div className={cn('showcase', className)}>
             {title && <div className="showcase__title">{title}</div>}
-            {description && <div className="showcase__description">{description}</div>}
+            {description && (
+                <div className="showcase__description">{description}</div>
+            )}
             <div className="showcase__content">{children}</div>
         </div>
     );

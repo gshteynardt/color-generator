@@ -7,7 +7,7 @@ export type Props = {
     children: ReactNode;
 };
 
-export const ShowcaseItem = ({title, children}: Props) => {
+export const ShowcaseItem = ({ title, children } : Props) => {
     return (
         <div className="showcase-item">
             <div className="showcase-item__title">{title}</div>

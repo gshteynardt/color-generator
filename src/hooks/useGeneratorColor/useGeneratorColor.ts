@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { useMemo } from 'react';
 
 import { useThemeStore } from '~/model/themeSlice/themeSlice';
@@ -38,7 +39,7 @@ import type { UseColorGeneratorProps, UseColorGeneratorResult } from './types';
 * - textColor: text color (dark or light), ensurring higher contrast on generated color.
 */
 export const useColorGenerator = (
-    props: UseColorGeneratorProps
+    props: UseColorGeneratorProps,
 ): UseColorGeneratorResult => {
     const { theme } = useThemeStore();
 
@@ -48,12 +49,12 @@ export const useColorGenerator = (
                 ...props,
                 theme,
             }),
-        [props, theme]
+        [props, theme],
     );
 
     const textColor = useMemo(
         () => getTextColor(hue, saturation, lightness),
-        [hue, lightness, saturation]
+        [hue, lightness, saturation],
     );
 
     return { color, textColor };

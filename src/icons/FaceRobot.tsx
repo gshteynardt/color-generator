@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import type { SVGProps } from 'react';
 
 export const FaceRobot = (props: SVGProps<SVGSVGElement>) => (

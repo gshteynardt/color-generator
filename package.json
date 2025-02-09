@@ -2,13 +2,13 @@
     "name": "color-generator",
     "private": true,
     "version": "0.0.0",
-    "type": "commonjs",
+    "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
-        "test": "jest",
+        "test": "node --experimental-vm-modules node_modules/.bin/jest",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"
     },

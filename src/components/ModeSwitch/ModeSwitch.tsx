@@ -23,7 +23,7 @@ export const ModeSwitch = ({ theme, checked, onToggle }: Props) => {
             <span
                 className={cn(
                     'mode-switch__slider',
-                    'mode-switch__slider_rounded'
+                    'mode-switch__slider_rounded',
                 )}
             />
         </label>

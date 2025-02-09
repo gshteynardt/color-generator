@@ -15,7 +15,7 @@ export const Header = ({ className, theme, onToggleTheme }: Props) => {
     const checked = theme === 'light';
 
     return (
-        <header className={cn('header', className)}>
+        <header className={cn('header', className, `header_theme_${theme}`)}>
             <ModeSwitch theme={theme} checked={checked} onToggle={onToggleTheme} />
         </header>
     );

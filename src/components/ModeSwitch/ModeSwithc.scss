@@ -1,20 +1,19 @@
 @use '../../styles' as variables;
 
 .mode-switch {
-    --_--mode-switch-on-color: rgb(68, 67, 82);
-    --_--mode-switch-off-color: rgb(204, 204, 204); 
-    --_--mode-switch-toggler-color: rgb(255, 255, 255); 
-
-    &_theme_dark {
-        --_--mode-switch-on-color: rgb(255, 255, 255);
-        --_--mode-switch-off-color: rgb(204, 204, 204); 
-        --_--mode-switch-toggler-color: rgb(68, 67, 82);
-    }
+    --_--mode-switch-on-color: #{variables.$g-gray-700};
+    --_--mode-switch-off-color: #{variables.$g-gray-300}; 
+    --_--mode-switch-toggler-color: #{variables.$g-white}; 
 
     position: relative;
     display: inline-block;
     width: 48px;
     height: 20px;
+
+    &_theme_dark {
+        --_--mode-switch-on-color: #{variables.$g-white};
+        --_--mode-switch-toggler-color: #{variables.$g-gray-700};
+    }
 
     & .mode-switch__toggler {
         opacity: 0;

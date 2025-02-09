@@ -1,10 +1,18 @@
 @use "../../styles" as variables;
 
 .header {
+    --_--border-bottom-color: #{variables.$g-gray-700};
+
     display: flex;
     justify-content: end;
     font-weight: #{variables.$g-text-header-font-weight};
     font-size: #{variables.$g-text-body-3-font-size};
     line-height: #{variables.$g-text-body-3-line-height};
     padding: variables.$g-spacing-6;
+    border-bottom: 1px solid var(--_--border-bottom-color);
+    box-sizing: border-box;
+
+    &_theme_dark {
+        --_--border-bottom-color: #{variables.$g-gray-300};
+    }
 }
