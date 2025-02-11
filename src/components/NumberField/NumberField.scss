@@ -1,0 +1,11 @@
+.number-field {
+    --_--color: var(--g-gray-700);
+
+    .MuiInputBase-input {
+        color: var(--_--color);
+    }
+
+    &_theme_dark {
+        --_--color: var(--g-white);
+    }
+}

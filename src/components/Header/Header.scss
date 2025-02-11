@@ -1,18 +1,44 @@
-@use "../../styles" as variables;
-
 .header {
-    --_--border-bottom-color: #{variables.$g-gray-700};
+    --_--border-bottom-color: var(--g-gray-700);
+    --_--background-color-color: var(--g-white);
+    --_--switch-label-color: var(--g-gray-700);
 
     display: flex;
-    justify-content: end;
-    font-weight: #{variables.$g-text-header-font-weight};
-    font-size: #{variables.$g-text-body-3-font-size};
-    line-height: #{variables.$g-text-body-3-line-height};
-    padding: variables.$g-spacing-6;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--g-spacing-2);
+    font-weight: var(--g-text-header-font-weight);
+    font-size: var(--g-text-body-3-font-size);
+    line-height: var(--g-text-body-3-line-height);
+    padding: var(--g-spacing-6);
     border-bottom: 1px solid var(--_--border-bottom-color);
     box-sizing: border-box;
+    background-color: var(--_--background-color-color);
+
+    .MuiFormControlLabel-root {
+        color: var(--_--switch-label-color);
+    }
 
     &_theme_dark {
-        --_--border-bottom-color: #{variables.$g-gray-300};
+        --_--border-bottom-color: var(--g-gray-300);
+        --_--background-color-color: var(--g-gray-700);
+        --_--switch-label-color: var(--g-white);
+    }
+
+    &_stiky {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: var(--g-zindex-header);
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: var(--g-spacing-6);
+    }
+
+    &__number-field {
+        max-width: 108px;
     }
 }

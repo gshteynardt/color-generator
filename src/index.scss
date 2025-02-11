@@ -14,14 +14,48 @@ body {
 }
 
 .dark {
-    background-color: rgb(68, 67, 82);
+    background-color: var(--g-gray-700);
 }
 
 .light {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--g-white);
 }
 
 #root {
     min-height: 100%;
     height: 100%;
+}
+
+:root {
+    --g-border-radius-xs: 3px;
+    --g-border-radius-s: 5px;
+    --g-border-radius-m: 6px;
+    --g-border-radius-l: 8px;
+    --g-border-radius-xl: 10px;
+
+    --g-gray-100: rgb(239 239 239);
+    --g-gray-300: rgb(204 204 204);
+    --g-gray-700: rgb(68 67 82);
+    --g-white: rgb(255 255 255);
+
+    --g-zindex-modal: 9000;
+    --g-zindex-overlay: 8000;
+    --g-zindex-dropdown: 7000;
+    --g-zindex-header: 6000;
+    --g-zindex-footer: 5000;
+
+    --g-spacing-base: 4px;
+
+    --g-spacing-0: 0;
+    --g-spacing-half: calc(var(--g-spacing-base) * 0.5);
+    --g-spacing-1: var(--g-spacing-base);
+    --g-spacing-2: calc(var(--g-spacing-base) * 2);
+    --g-spacing-3: calc(var(--g-spacing-base) * 3);
+    --g-spacing-4: calc(var(--g-spacing-base) * 4);
+    --g-spacing-5: calc(var(--g-spacing-base) * 5);
+    --g-spacing-6: calc(var(--g-spacing-base) * 6);
+    --g-spacing-7: calc(var(--g-spacing-base) * 7);
+    --g-spacing-8: calc(var(--g-spacing-base) * 8);
+    --g-spacing-9: calc(var(--g-spacing-base) * 9);
+    --g-spacing-10: var(--g-spacing-base) * 10;
 }

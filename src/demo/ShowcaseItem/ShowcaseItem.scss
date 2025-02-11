@@ -1,10 +1,8 @@
-@use "../../styles" as variables;
-
 .showcase-item {
     &__title {
-        font-size: #{variables.$g-text-subheader-3-font-size};
-        font-weight: #{variables.$g-text-subheader-font-weight};
-        line-height: #{variables.$g-text-subheader-3-line-height};
-        margin-block-end: #{variables.$g-spacing-3};
+        font-size: var(--g-text-subheader-3-font-size);
+        font-weight: var(--g-text-subheader-font-weight);
+        line-height: var(--g-text-subheader-3-line-height);
+        margin-block-end: var(--g-spacing-3);
     }
 }

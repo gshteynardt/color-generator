@@ -1,31 +1,29 @@
-@use '../../../styles' as variables;
-
 .generated-colors {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-
-    color: #{variables.$g-gray-700};
+    color: var(--g-gray-700);
 
     &_theme_dark {
-        color: #{variables.$g-gray-100};
+        color: var(--g-gray-100);
     }
 
     &__color-items {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-        padding: 12px 8px;
+        gap: var(--g-spacing-3);
+        padding: var(--g-spacing-3) var(--g-spacing-2);
     }
 
     &__grid {
         display: inline-grid;
         grid-template-columns: repeat(2, auto);
         place-items: center center;
-        margin-block-end: 20px;
+        margin-block-end: var(--g-spacing-5);
 
         &-cell {
-            padding: 12px 16px;
+            padding: var(--g-spacing-3) var(--g-spacing-4);
 
             &_head_left {
                 white-space: nowrap;

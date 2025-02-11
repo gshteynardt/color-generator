@@ -1,11 +1,9 @@
-@use '../../styles' as variables;
-
 .avatar {
     --_--size: 32px;
-    --_--background-color: rgba(96, 128, 156, 0.4);
-    --_--color: rgb(255, 255, 255);
-    --_--font-size: #{variables.$g-text-body-1-font-size};
-    --_--line-height: #{variables.$g-text-body-1-line-height};
+    --_--background-color: rgb(96 128 156 / 40%);
+    --_--color: rgb(255 255 255);
+    --_--font-size: var(--g-text-body-1-font-size);
+    --_--line-height: var(--g-text-body-1-line-height);
 
     overflow: hidden;
     display: inline-flex;
@@ -34,6 +32,8 @@
     &_size {
         &_s {
             --_--size: 28px;
+            --_--font-size: var(--g-text-caption-1-font-size);
+            --_--line-height: var(--g-text-caption-1-line-height);
         }
 
         &_m {
@@ -44,15 +44,10 @@
             --_--size: 42px;
         }
 
-        &_s {
-            --_--font-size: #{variables.$g-text-caption-1-font-size};
-            --_--line-height: #{variables.$g-text-caption-1-line-height};
-        }
-
         &_m,
         &_l {
-            --_--font-size: #{variables.$g-text-body-1-font-size};
-            --_--line-height: #{variables.$g-text-body-1-line-height};
+            --_--font-size: var(--g-text-body-1-font-size);
+            --_--line-height: var(--g-text-body-1-line-height);
         }
     }
 }

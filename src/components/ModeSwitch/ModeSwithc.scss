@@ -1,9 +1,7 @@
-@use '../../styles' as variables;
-
 .mode-switch {
-    --_--mode-switch-on-color: #{variables.$g-gray-700};
-    --_--mode-switch-off-color: #{variables.$g-gray-300}; 
-    --_--mode-switch-toggler-color: #{variables.$g-white}; 
+    --_--mode-switch-on-color: var(--g-gray-700);
+    --_--mode-switch-off-color: var(--g-gray-300); 
+    --_--mode-switch-toggler-color: var(--g-white); 
 
     position: relative;
     display: inline-block;
@@ -11,8 +9,8 @@
     height: 20px;
 
     &_theme_dark {
-        --_--mode-switch-on-color: #{variables.$g-white};
-        --_--mode-switch-toggler-color: #{variables.$g-gray-700};
+        --_--mode-switch-on-color: var(--g-white);
+        --_--mode-switch-toggler-color: var(--g-gray-700);
     }
 
     & .mode-switch__toggler {
@@ -43,7 +41,6 @@
         right: 0;
         bottom: 0;
         background-color: var(--_--mode-switch-off-color);
-        -webkit-transition: 0.4s;
         transition: 0.4s;
 
         &::before {
@@ -54,12 +51,11 @@
             left: 4px;
             bottom: 4px;
             background-color: var(--_--mode-switch-toggler-color);
-            -webkit-transition: 0.4s;
             transition: 0.4s;
         }
 
         &_rounded {
-            border-radius: calc(variables.$g-border-radius-xl * 2);
+            border-radius: calc(var(--g-border-radius-xl) * 2);
 
             &::before {
                 border-radius: 50%;

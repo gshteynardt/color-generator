@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import cn from 'classnames';
 
 import { Theme } from '~/types';
@@ -10,7 +11,7 @@ export type Props = {
     onToggle: () => void;
 };
 
-export const ModeSwitch = ({ theme, checked, onToggle }: Props) => {
+export const ModeSwitch = memo(({ theme, checked, onToggle }: Props) => {
     return (
         <label className={cn('mode-switch', `mode-switch_theme_${theme}`)}>
             <input
@@ -28,4 +29,6 @@ export const ModeSwitch = ({ theme, checked, onToggle }: Props) => {
             />
         </label>
     );
-};
+});
+
+ModeSwitch.displayName = 'ModeSwitch';
