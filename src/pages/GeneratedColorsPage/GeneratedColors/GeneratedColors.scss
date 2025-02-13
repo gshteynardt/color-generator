@@ -9,18 +9,10 @@
         color: var(--g-gray-100);
     }
 
-    &__color-items {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--g-spacing-3);
-        padding: var(--g-spacing-3) var(--g-spacing-2);
-    }
-
     &__grid {
         display: inline-grid;
-        grid-template-columns: repeat(2, auto);
-        place-items: center center;
-        margin-block-end: var(--g-spacing-5);
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: var(--g-spacing-5);
 
         &-cell {
             padding: var(--g-spacing-3) var(--g-spacing-4);
