@@ -64,8 +64,8 @@ const generateHSLColor = ({ hash, intensity, theme }: HslColorProps) => {
         saturationRange[0],
         saturationRange[1],
     );
-    const lightness = normalizeHash(hash, lightnessRange[0], lightnessRange[1]);
 
+    const lightness = normalizeHash(hash, lightnessRange[0], lightnessRange[1]);
     const color = `hsl(${hue}deg ${saturation}% ${lightness}%)`;
 
     return { color, hue, saturation, lightness };

@@ -6,7 +6,16 @@ import { useSettingsStore } from '~/model/settingsSlice';
 
 export const useSettings = () => {
     const { regenerate, changeSize } = useColorTokensStore();
-    const { withText, numberColors, updateNumberColors, toogleWithText } = useSettingsStore();
+
+    const {
+        withText,
+        setUpManually,
+        numberColors,
+        updateNumberColors,
+        toggleWithText,
+        toggleSetUpManually,
+    } = useSettingsStore();
+
     const [numValue, setNumNalue] = useState(String(numberColors));
 
     const handleUpdate = useCallback((value: string) => {
@@ -20,14 +29,21 @@ export const useSettings = () => {
 
     const handleToogleWithText = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         const { checked } = event.target;
-        toogleWithText(checked);
-    }, [toogleWithText]);
+        toggleWithText(checked);
+    }, [toggleWithText]);
+
+    const handleToogleSetUpManually = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+        const { checked } = event.target;
+        toggleSetUpManually(checked);
+    }, [toggleSetUpManually]);
 
     return {
         numValue,
         withText,
+        setUpManually,
         regenerate,
         handleUpdate,
         handleToogleWithText,
+        handleToogleSetUpManually,
     };
 };

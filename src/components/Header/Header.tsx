@@ -24,10 +24,12 @@ export const Header = ({
 }: Props) => {
     const {
         withText,
+        setUpManually,
         numValue,
         regenerate,
         handleUpdate,
         handleToogleWithText,
+        handleToogleSetUpManually,
     } = useSettings();
     const checked = theme === 'light';
 
@@ -65,6 +67,16 @@ export const Header = ({
                         />
                     }
                     label="With text"
+                />
+                <FormControlLabel
+                    control={
+                        <Switch
+                            onChange={handleToogleSetUpManually}
+                            color="secondary"
+                            checked={setUpManually}
+                        />
+                    }
+                    label="Set up colors manually"
                 />
             </div>
             <ModeSwitch
