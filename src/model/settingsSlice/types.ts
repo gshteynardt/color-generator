@@ -1,11 +1,11 @@
 export type State = {
     numberColors: number;
     withText: boolean;
+    withIcon: boolean;
     setUpManually: boolean;
 };
 
 export type Actions = {
     updateNumberColors: (value: number) => void;
-    toggleWithText: (value: boolean) => void;
-    toggleSetUpManually: (value: boolean) => void;
+    toggleSettings: (name: string, value: boolean) => void;
 };

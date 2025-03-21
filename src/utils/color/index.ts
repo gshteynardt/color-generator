@@ -53,11 +53,11 @@ const getHash = (seed: string) => {
     return hash;
 };
 
-const generateHSLColor = ({ hash, intensity, theme }: HslColorProps) => {
+const generateHSLColor = ({ hash, intensity, theme, options }: HslColorProps) => {
     const hue = getHue(hash);
     const themeOptions = colorOptions[theme];
-    const lightnessRange = themeOptions[intensity].lightness;
-    const saturationRange = themeOptions[intensity].situration;
+    const lightnessRange = options?.lightness ?? themeOptions[intensity].lightness;
+    const saturationRange = options?.situration ?? themeOptions[intensity].situration;
 
     const saturation = normalizeHash(
         hash,
@@ -75,9 +75,10 @@ export const getPersistentColor = ({
     seed,
     intensity = 'light',
     theme,
+    options,
 }: ColorProps) => {
     const hash = getHash(seed);
-    const values = generateHSLColor({ hash, intensity, theme });
+    const values = generateHSLColor({ hash, intensity, theme, options });
 
     return values;
 };

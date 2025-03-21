@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { IconButton, FormControlLabel, Switch } from '@mui/material';
+import { IconButton } from '@mui/material';
 import ReplayIcon from '@mui/icons-material/Replay';
 
 import { useSettings } from '~/hooks/useSettings';
@@ -7,7 +7,10 @@ import type { Theme } from '~/types';
 
 import { ModeSwitch } from '../ModeSwitch/ModeSwitch';
 import { NumberField } from '../NumberField/NumberField';
+import { SwitchsGroup } from '../SwitchsGroup';
+
 import './Header.scss';
+import { switchsOptions } from '~/constants';
 
 export type Props = {
     className?: string;
@@ -23,14 +26,13 @@ export const Header = ({
     onToggleTheme,
 }: Props) => {
     const {
-        withText,
-        setUpManually,
         numValue,
+        checkedIds,
         regenerate,
         handleUpdate,
-        handleToogleWithText,
-        handleToogleSetUpManually,
+        handleToggleSettings,
     } = useSettings();
+
     const checked = theme === 'light';
 
     return (
@@ -58,25 +60,10 @@ export const Header = ({
                     value={numValue}
                     onUpdate={handleUpdate}
                 />
-                <FormControlLabel
-                    control={
-                        <Switch
-                            onChange={handleToogleWithText}
-                            color="secondary"
-                            checked={withText}
-                        />
-                    }
-                    label="With text"
-                />
-                <FormControlLabel
-                    control={
-                        <Switch
-                            onChange={handleToogleSetUpManually}
-                            color="secondary"
-                            checked={setUpManually}
-                        />
-                    }
-                    label="Set up colors manually"
+                <SwitchsGroup
+                    options={switchsOptions}
+                    checkedIds={checkedIds}
+                    onChange={handleToggleSettings}
                 />
             </div>
             <ModeSwitch

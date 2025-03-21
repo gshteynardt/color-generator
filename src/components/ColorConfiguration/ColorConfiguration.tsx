@@ -19,7 +19,7 @@ export const ColorConfiguration = ({
     return (
         <div className={cn(className, 'color-configuration')}>
             {Object.keys(configuration).map((option) => (
-                <Box>
+                <Box key={option}>
                     <Typography>lightness</Typography>
                     <Slider
                         name={option}

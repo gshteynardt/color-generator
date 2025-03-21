@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import cn from 'classnames';
 
 import { ColorView } from '~/components/ColorView/ColorView';
+import { FaceRobot } from '~/icons/FaceRobot';
 import { useColorsConfigurations } from '~/hooks/useColorsConfigurations';
 import type { Theme } from '~/types';
 
@@ -13,10 +14,12 @@ export type Props = {
     theme: Theme;
     tokens: string[];
     withText: boolean;
+    withIcon: boolean;
 };
 
-export const GeneratedColors = ({ theme, tokens, withText }: Props) => {
+export const GeneratedColors = ({ theme, tokens, withText, withIcon }: Props) => {
     const { colorsConfigurations, handleChangeColorConfiguration } = useColorsConfigurations();
+    const icon = useMemo(() => withIcon ? <FaceRobot width={20} height={20} /> : undefined, [withIcon]);
 
     const items = useMemo(() => {
         const result: ReactNode[] = [];
@@ -24,17 +27,19 @@ export const GeneratedColors = ({ theme, tokens, withText }: Props) => {
         for (const view of views) {
             result.push(
                 <ColorView
+                    key={view}
                     configuration={colorsConfigurations[view]}
                     tokens={tokens}
                     intensity={view}
                     withText={withText}
+                    icon={icon}
                     onChangeColorConfiguration={handleChangeColorConfiguration}
                 />,
             );
         }
 
         return result;
-    }, [colorsConfigurations, handleChangeColorConfiguration, tokens, withText]);
+    }, [colorsConfigurations, handleChangeColorConfiguration, icon, tokens, withText]);
 
     return (
         <div

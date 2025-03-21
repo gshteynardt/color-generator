@@ -12,6 +12,7 @@ export type ThemeColorSettings = {
 export type Intensity = 'light' | 'medium' | 'heavy';
 
 export type ColorProps = {
+    options?: ColorOptions;
     intensity?: Intensity;
     seed: string;
     theme: string;
@@ -28,6 +29,7 @@ export type UseColorGeneratorResult = {
 };
 
 export type HslColorProps = {
+    options?: ColorOptions;
     hash: number;
     intensity: Intensity;
     theme: string;

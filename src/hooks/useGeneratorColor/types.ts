@@ -18,7 +18,7 @@ export type ColorProps = {
 };
 
 export type UseColorGeneratorProps = {
-    intensity?: Intensity;
+    intensity: Intensity;
     seed: string;
 };
 

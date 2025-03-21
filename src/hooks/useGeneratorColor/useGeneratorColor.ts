@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 import { useMemo } from 'react';
 
-import { useThemeStore } from '~/model/themeSlice/themeSlice';
+import { useThemeStore } from '~/model/themeSlice';
+import { useColorsConfigurationsSlice } from '~/model/colorsConfigurations';
 
 import { getPersistentColor, getTextColor } from '~/utils/color';
 import type { UseColorGeneratorProps, UseColorGeneratorResult } from './types';
@@ -42,14 +43,18 @@ export const useColorGenerator = (
     props: UseColorGeneratorProps,
 ): UseColorGeneratorResult => {
     const { theme } = useThemeStore();
+    const { configurations } = useColorsConfigurationsSlice();
+    const colorsConfiguration = configurations[theme];
+    const options = colorsConfiguration[props.intensity];
 
     const { color, hue, saturation, lightness } = useMemo(
         () =>
             getPersistentColor({
                 ...props,
+                options,
                 theme,
             }),
-        [props, theme],
+        [options, props, theme],
     );
 
     const textColor = useMemo(

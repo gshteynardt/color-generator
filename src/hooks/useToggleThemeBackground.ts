@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useThemeStore } from '~/model/themeSlice/themeSlice';
+import { useThemeStore } from '~/model/themeSlice';
 
 export const useToggleThemeBackground = () => {
     const { theme } = useThemeStore();

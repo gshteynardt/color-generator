@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react';
-import type { ChangeEvent } from 'react';
+import type { ChangeEvent, ReactNode } from 'react';
 import cn from 'classnames';
 
 import { ColoredAvatar } from '~/components/ColoredAvatar/ColoredAvatar';
@@ -10,11 +10,12 @@ import { ColorConfiguration } from '~/components/ColorConfiguration/ColorConfigu
 
 type Props = {
     className?: string;
-    configuration: ColorOptions;
+    icon?: ReactNode;
     onChangeColorConfiguration?: (
         event: ChangeEvent<HTMLInputElement>,
         intensity: Intensity,
     ) => void;
+    configuration: ColorOptions;
     tokens: string[];
     intensity: Intensity;
     withText: boolean;
@@ -26,6 +27,7 @@ export const ColorView = memo(
         tokens,
         intensity,
         withText,
+        icon,
         configuration,
         onChangeColorConfiguration,
     }: Props) => {
@@ -55,6 +57,7 @@ export const ColorView = memo(
                             intensity={intensity}
                             seed={token}
                             withText={withText}
+                            icon={icon}
                         />
                     ))}
                 </div>

@@ -15,6 +15,7 @@ export const ColoredAvatar = ({
     intensity,
     seed,
     withText,
+    icon,
     ...avatarProps
 }: ColoredAvatarProps) => {
     const { color, textColor } = useColorGenerator({
@@ -22,12 +23,16 @@ export const ColoredAvatar = ({
         intensity,
     });
 
+    const text = withText ? seed : undefined;
+    const avatarColor = withText || icon ? textColor : undefined;
+
     return (
         <Avatar
             {...avatarProps}
-            text={withText ? seed : undefined}
-            color={withText ? textColor : undefined}
+            text={text}
+            color={avatarColor}
             title={color}
+            icon={icon}
             backgroundColor={color}
             size="l"
         />
