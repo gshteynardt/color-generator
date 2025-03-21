@@ -21,20 +21,19 @@ export const useSettings = () => {
     const [checkedIds, setCheckedIds] = useState<string[]>([]);
 
     useLayoutEffect(() => {
-        const initCheckedIds = [];
+        const syncCheckedIds = [];
         const switchSettings = { withText, withIcon, setUpManually };
 
         for (const [key, value] of Object.entries(switchSettings)) {
             if (value) {
-                initCheckedIds.push(settingToId[key as keyof typeof settingToId]);
+                syncCheckedIds.push(settingToId[key as keyof typeof settingToId]);
             }
         }
 
-        if (initCheckedIds.length > 0) {
-            setCheckedIds(initCheckedIds);
+        if (syncCheckedIds.length > 0) {
+            setCheckedIds(syncCheckedIds);
         } 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [setUpManually, withIcon, withText]);
 
     const handleUpdate = useCallback(
         (value: string) => {

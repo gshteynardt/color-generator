@@ -1,7 +1,7 @@
 import type { ChangeEvent } from 'react';
 import { FormControlLabel, Switch } from '@mui/material';
 
-import { SwitchOption } from './type';
+import type { SwitchOption } from './type';
 import './SwitchsGroup.scss';
 
 export type Props = {

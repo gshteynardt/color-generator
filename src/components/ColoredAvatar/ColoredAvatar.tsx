@@ -1,9 +1,8 @@
 import { ComponentProps } from 'react';
 
+import { Avatar } from '~/components/Avatar/Avatar';
 import { useColorGenerator } from '~/hooks/useGeneratorColor';
 import type { UseColorGeneratorProps } from '~/hooks/useGeneratorColor';
-
-import { Avatar } from '../Avatar/Avatar';
 
 type ColoredAvatarProps = ComponentProps<typeof Avatar> & {
     withText: boolean;

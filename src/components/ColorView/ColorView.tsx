@@ -3,10 +3,10 @@ import type { ChangeEvent, ReactNode } from 'react';
 import cn from 'classnames';
 
 import { ColoredAvatar } from '~/components/ColoredAvatar/ColoredAvatar';
+import { ColorConfiguration } from '~/components/ColorConfiguration/ColorConfiguration';
 import type { ColorOptions, Intensity } from '~/types';
 
 import './ColorView.scss';
-import { ColorConfiguration } from '~/components/ColorConfiguration/ColorConfiguration';
 
 type Props = {
     className?: string;

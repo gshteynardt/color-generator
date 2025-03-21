@@ -2,15 +2,14 @@ import cn from 'classnames';
 import { IconButton } from '@mui/material';
 import ReplayIcon from '@mui/icons-material/Replay';
 
+import { ModeSwitch } from '~/components/ModeSwitch/ModeSwitch';
+import { NumberField } from '~/components/NumberField/NumberField';
+import { SwitchsGroup } from '~/components/SwitchsGroup';
 import { useSettings } from '~/hooks/useSettings';
+import { switchsOptions } from '~/constants';
 import type { Theme } from '~/types';
 
-import { ModeSwitch } from '../ModeSwitch/ModeSwitch';
-import { NumberField } from '../NumberField/NumberField';
-import { SwitchsGroup } from '../SwitchsGroup';
-
 import './Header.scss';
-import { switchsOptions } from '~/constants';
 
 export type Props = {
     className?: string;
